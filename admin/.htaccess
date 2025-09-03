@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^/]+)/?$ $1.php [L]
+
+# (Opsional) Proteksi akses ke file sensitif
+<FilesMatch "(\.env|\.git|composer\.json|composer\.lock)">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 

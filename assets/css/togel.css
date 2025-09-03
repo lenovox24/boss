@@ -1,0 +1,221 @@
+body,
+.togel-main {
+  background: #23272f !important;
+  color: #fff;
+}
+.togel-step {
+  display: block;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.togel-step-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: #ff006e;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+.togel-pasaran-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.togel-pasaran-btn {
+  background: linear-gradient(90deg, #ff006e 60%, #f8f9fa 100%);
+  color: #23272f;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  padding: 1rem 1.2rem;
+  box-shadow: 0 2px 8px #0002;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  transition: 0.15s;
+}
+.togel-pasaran-btn:hover,
+.togel-pasaran-btn.active {
+  background: linear-gradient(90deg, #8338ec 60%, #f8f9fa 100%);
+  color: #23272f;
+}
+.pasaran-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+.pasaran-info {
+  font-size: 0.95rem;
+  color: #444;
+}
+.togel-diskon-bar {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.togel-diskon-select {
+  background: #f8f9fa;
+  color: #23272f;
+  border-radius: 6px;
+  border: 1px solid #ff006e;
+  font-weight: bold;
+  padding: 4px 12px;
+}
+.togel-jenis-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.togel-jenis-btn {
+  background: linear-gradient(90deg, #ff006e 60%, #f8f9fa 100%);
+  color: #23272f;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.05rem;
+  font-weight: bold;
+  padding: 0.9rem 0.5rem;
+  box-shadow: 0 2px 8px #0002;
+  transition: 0.15s;
+}
+.togel-jenis-btn:hover,
+.togel-jenis-btn.active {
+  background: linear-gradient(90deg, #8338ec 60%, #f8f9fa 100%);
+  color: #23272f;
+}
+.togel-input-table-wrapper {
+  overflow-x: auto;
+}
+.togel-input-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #23272f;
+  margin-bottom: 0;
+}
+.togel-input-table th,
+.togel-input-table td {
+  border: 1px solid #ff006e;
+  padding: 6px 4px;
+  text-align: center;
+  background: #2d2d2d;
+  color: #fff;
+}
+.togel-input-table th {
+  background: #ff006e;
+  color: #23272f;
+  font-weight: bold;
+}
+.input-nomor,
+.input-game,
+.input-potongan,
+.input-bayar {
+  width: 70px;
+  border-radius: 4px;
+  border: 1px solid #ff006e;
+  background: #f8f9fa;
+  color: #23272f;
+  font-weight: bold;
+  text-align: center;
+}
+.input-nomor {
+  width: 100px;
+  min-width: 60px;
+  max-width: 120px;
+}
+.input-game {
+  width: 80px;
+  min-width: 60px;
+  max-width: 120px;
+}
+.input-potongan,
+.input-bayar {
+  width: 90px;
+  min-width: 60px;
+  max-width: 120px;
+  background: #f7e7a6;
+  color: #23272f;
+}
+.input-bet {
+  width: 70px;
+  min-width: 50px;
+  max-width: 90px;
+}
+.btn-copy-row {
+  background: #8338ec;
+  color: #23272f;
+  border: none;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 1rem;
+}
+.btn-copy-row:hover {
+  background: #ff006e;
+  color: #fff;
+}
+.togel-input-action-bar {
+  background: #2d2d2d;
+  border-radius: 8px;
+  padding: 0.7rem 1rem;
+  margin-top: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.togel-quickbet-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.togel-total-bet {
+  font-size: 1.15rem;
+  font-weight: bold;
+  color: #ff006e;
+  margin: 0 18px;
+  min-width: 120px;
+  text-align: right;
+}
+#btn-konfirmasi {
+  font-weight: bold;
+  padding: 0.5rem 1.5rem;
+}
+@media (max-width: 768px) {
+  .togel-step {
+    max-width: 100%;
+    padding: 0 2px;
+  }
+  .togel-pasaran-btn,
+  .togel-jenis-btn {
+    font-size: 0.98rem;
+    padding: 0.7rem 0.3rem;
+  }
+  .togel-input-table th,
+  .togel-input-table td {
+    padding: 4px 2px;
+  }
+  .input-nomor,
+  .input-game,
+  .input-potongan,
+  .input-bayar {
+    width: 60px;
+    min-width: 40px;
+    font-size: 0.95rem;
+  }
+  .input-bet {
+    width: 50px;
+    min-width: 40px;
+    font-size: 0.95rem;
+  }
+  .togel-input-action-bar {
+    flex-direction: column;
+    gap: 8px;
+    align-items: stretch;
+  }
+  .togel-total-bet {
+    margin: 0 0 0 0;
+    min-width: 0;
+    text-align: left;
+    font-size: 1.05rem;
+  }
+  .input-quickbet {
+    width: 80px;
+  }
+}

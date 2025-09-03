@@ -1,0 +1,58 @@
+User-agent: *
+Allow: /
+
+# Blokir file sensitif dan admin
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /assets/uploads/
+Disallow: /process_*.php
+Disallow: /api_*.php
+Disallow: /get_*.php
+Disallow: /debug.php
+Disallow: /*?*
+Disallow: /search?
+Disallow: /login?
+Disallow: /logout
+Disallow: /profil
+Disallow: /deposit
+Disallow: /withdraw
+Disallow: /transaksi
+Disallow: /rekening
+Disallow: /memo
+Disallow: /referral
+Disallow: /beranda
+
+# Halaman yang diizinkan untuk diindeks
+Allow: /
+Allow: /index
+Allow: /daftar
+Allow: /login
+Allow: /promo
+Allow: /bantuan
+Allow: /livechat
+Allow: /togel
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/images/
+Allow: /sitemap.xml
+Allow: /robots.txt
+
+# Khusus untuk Googlebot
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Crawl-delay: 1
+
+# Khusus untuk Bingbot
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+Disallow: /includes/
+Crawl-delay: 2
+
+# Sitemap
+Sitemap: https://cuanss.web.id/sitemap.xml
+
+# Crawl delay untuk menghindari overload server
+Crawl-delay: 1
