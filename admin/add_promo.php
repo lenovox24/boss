@@ -13,9 +13,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $image_url = '';
     if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == 0) {
-        // Path absolut ke folder promos di root project
-        $project_folder = basename(dirname(__DIR__)); // otomatis ambil nama folder project
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/' . $project_folder . '/assets/images/promos/';
+        // Gunakan path filesystem yang stabil relatif ke root project
+        $target_dir = dirname(__DIR__) . '/assets/images/promos/';
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true); // Buat folder jika belum ada
         }

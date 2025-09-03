@@ -29,7 +29,7 @@ if ($result->num_rows === 1) {
     if ($delete_stmt->execute()) {
         // Hapus file gambar dari server
         if (!empty($image_to_delete)) {
-            $file_path = $_SERVER['DOCUMENT_ROOT'] . '/hokiraja/assets/images/promos/' . $image_to_delete;
+            $file_path = dirname(__DIR__) . '/assets/images/promos/' . $image_to_delete;
             if (file_exists($file_path)) {
                 unlink($file_path);
             }

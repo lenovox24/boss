@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ... (Logika upload gambar tidak berubah) ...
     if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == 0) {
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/promos/';
+        $target_dir = dirname(__DIR__) . '/assets/images/promos/';
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
