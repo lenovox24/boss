@@ -1,8 +1,14 @@
 <?php
 // File: admin/add_promo.php (Versi dengan Deskripsi)
-$page_title = "Tambah Promo Baru";
-require_once __DIR__ . '/includes/header.php';
-require_once __DIR__ . '/includes/sidebar.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: index");
+    exit();
+}
+require_once __DIR__ . '/../includes/db_connect.php';
+require_once __DIR__ . '/../includes/site_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
@@ -33,11 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         $_SESSION['success_message'] = "Promo baru berhasil ditambahkan!";
-        header("Location: manage_promo");
+        header("Location: manage_promo.php");
         exit();
     }
     $stmt->close();
 }
+
+$page_title = "Tambah Promo Baru";
+require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/sidebar.php';
 ?>
 
 <h1 class="mb-4"><?php echo $page_title; ?></h1>

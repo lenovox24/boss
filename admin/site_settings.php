@@ -104,9 +104,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['slider_action'])) {
 }
 
 // Path upload gambar untuk logo umum (main_logo, admin_logo, footer_logo)
-$upload_dir_general = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/'; // Ganti ke path dinamis
+$upload_dir_general = dirname(__DIR__) . '/assets/images/';
 // Path upload gambar untuk QRIS
-$upload_dir_qris = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/qris/'; // Ganti ke path dinamis
+$upload_dir_qris = dirname(__DIR__) . '/assets/images/qris/';
 
 // Pastikan folder qris ada
 if (!is_dir($upload_dir_qris)) {
