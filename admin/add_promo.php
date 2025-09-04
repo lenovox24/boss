@@ -1,8 +1,14 @@
 <?php
 // File: admin/add_promo.php (Versi dengan Deskripsi)
-$page_title = "Tambah Promo Baru";
-require_once __DIR__ . '/includes/header.php';
-require_once __DIR__ . '/includes/sidebar.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: index");
+    exit();
+}
+require_once __DIR__ . '/../includes/db_connect.php';
+require_once __DIR__ . '/../includes/site_config.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $title = $_POST['title'];
@@ -13,9 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $image_url = '';
     if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == 0) {
-        // Path absolut ke folder promos di root project
-        $project_folder = basename(dirname(__DIR__)); // otomatis ambil nama folder project
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/' . $project_folder . '/assets/images/promos/';
+        // Gunakan path filesystem yang stabil relatif ke root project
+        $target_dir = dirname(__DIR__) . '/assets/images/promos/';
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true); // Buat folder jika belum ada
         }
@@ -34,11 +39,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt->execute()) {
         $_SESSION['success_message'] = "Promo baru berhasil ditambahkan!";
-        header("Location: manage_promo");
+        header("Location: manage_promo.php");
         exit();
     }
     $stmt->close();
 }
+
+$page_title = "Tambah Promo Baru";
+require_once __DIR__ . '/includes/header.php';
+require_once __DIR__ . '/includes/sidebar.php';
 ?>
 
 <h1 class="mb-4"><?php echo $page_title; ?></h1>

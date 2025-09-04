@@ -2,6 +2,7 @@
 
 # Enable rewrite engine
 RewriteEngine On
+Options -MultiViews
 
 # Force HTTPS (uncomment when SSL is ready)
 # RewriteCond %{HTTPS} off

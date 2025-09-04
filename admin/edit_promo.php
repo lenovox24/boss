@@ -1,8 +1,14 @@
 <?php
 // File: admin/edit_promo.php (Versi dengan Deskripsi)
-$page_title = "Ubah Promo";
-require_once 'includes/header.php';
-require_once 'includes/sidebar.php';
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+if (!isset($_SESSION['admin_id'])) {
+    header("Location: index");
+    exit();
+}
+require_once __DIR__ . '/../includes/db_connect.php';
+require_once __DIR__ . '/../includes/site_config.php';
 
 if (!isset($_GET['id'])) {
     header("Location: manage_promo.php");
@@ -21,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // ... (Logika upload gambar tidak berubah) ...
     if (isset($_FILES['image_url']) && $_FILES['image_url']['error'] == 0) {
-        $target_dir = $_SERVER['DOCUMENT_ROOT'] . '/assets/images/promos/';
+        $target_dir = dirname(__DIR__) . '/assets/images/promos/';
         if (!is_dir($target_dir)) {
             mkdir($target_dir, 0777, true);
         }
